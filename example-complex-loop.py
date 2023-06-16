@@ -8,10 +8,7 @@ def init():
 @label
 def loop():
     global i;
-
-    if(i >= 10):
-        print();
-        goto("end");
+    goto("end", i >= 10);
 
     print(i, end = " ");
     i += 1;
@@ -23,6 +20,6 @@ def end():
 
     n -= 1;
     i = n;
-    print(f"\n :: {n}\n");
+    print(f"\n\n :: {n}\n");
 
     goto("loop");

@@ -119,11 +119,17 @@ class Labeller():
 
 label = Labeller();
 
-def goto(label: str):
+def goto(label: str, pred: bool = True):
     """
     Jump to other block. Can only be used
     in blocks.
+
+    Can be conditional jump if second argument
+    provided
     """
-    raise Goto(label);
+    if(pred):
+        raise Goto(label);
+    else:
+        pass;
 
 __all__ = ("label", "goto", );

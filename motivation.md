@@ -27,8 +27,7 @@ so is using goto syntax:
 label init:
     i = 2
 label loop:
-    if i >= 10:
-        goto out
+    goto out, i <= 10 # Conditional jump
     print(f"{i}: Hello, World!")
     i += 1
     goto loop
@@ -50,8 +49,7 @@ def init():
 @label
 def loop():
     global i;
-    if(i >= 10):
-        raise goto("out");
+    raise goto("out", i >= 10);
 
     print(f"{i}: Hello, World!");
     i += 1;
