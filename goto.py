@@ -114,7 +114,7 @@ class Labeller():
         if(self.__pending is not None):
             raise UnknownLabelException(
                 "Requested jump to non-existent "
-                f"label, {self.__pending !r}"
+                f"label: {self.__pending !r}"
             );
 
 label = Labeller();
