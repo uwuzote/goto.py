@@ -6,6 +6,8 @@ class Goto(BaseException):
     def __init__(self, label: str):
         self.label = label;
 
+goto = Goto;
+del Goto;
 
 class Labeller():
     __slots__ = ("__blocks", "__pending", );
@@ -29,7 +31,7 @@ class Labeller():
 
     def __execute(self, block):
         while True:
-            res = Labeller.__execute_fn(block[1]);
+            res = self.__execute_fn(block[1]);
 
             if(res is None):
                 next = self.__find_next(block[0]);
@@ -70,14 +72,19 @@ class Labeller():
     def __execute_fn(fn):
         try:
             fn();
-        except Goto as goto:
-            return goto.label;
+        except goto as goto_:
+            return goto_.label;
         else:
             return None;
 
-    def end(self):
+    def __del__(self):
         if(self.__pending is not None):
             raise UnknownLabelException(
                 f"Unknown label: {self.__pending !r}"
-            )
+            );
+
+label = Labeller();
+del Labeller;
+
+__all__ = ("label", "goto", "UnknownLabelException", );
         
