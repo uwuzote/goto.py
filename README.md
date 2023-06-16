@@ -36,9 +36,10 @@ For examples see [`./example-complex-loop.py`](./example-complex-loop.py),
 
 ---
 
-Thanks [@Tsoding](https://github.com/tsoding) for inspiration.
+Thanks [@Tsoding](https://github.com/tsoding) for inspiration:
+['I implemented Goto in OCaml' video](https://youtu.be/iPrltr1b6Q4).
 
 For real-world use consider other implementations
 of goto in Python:
- * [python-goto by snoack](https://github.com/snoack/python-goto),
- * [goto for Python by Richie Hindle](http://entrian.com/goto/).
+ * [python-goto](https://github.com/snoack/python-goto) by snoack,
+ * [goto for Python](http://entrian.com/goto/) by Richie Hindle.
